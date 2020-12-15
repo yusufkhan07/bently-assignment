@@ -1,9 +1,6 @@
-import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import { Home } from './components/home'
-
-function App() {
+export const Navbar = props => {
 	return (
 		<Router>
 			<nav
@@ -11,13 +8,13 @@ function App() {
 				role='navigation'
 				aria-label='main navigation'
 			>
-				<div className='navbar-menu is-active'>
+				<div id='navbarBasicExample' className='navbar-menu  is-active'>
 					<div className='navbar-start'>
 						<Link to='/' className='navbar-item'>
 							Task 1
 						</Link>
 
-						<Link to='/task2' className='navbar-item'>
+						<Link to='/about' className='navbar-item'>
 							Task 2
 						</Link>
 					</div>
@@ -25,15 +22,13 @@ function App() {
 			</nav>
 
 			<Switch>
-				<Route path='/task2'>
-					<div>Max 2 Elements from Array</div>
+				<Route path='/about'>
+					<div>About Page</div>
 				</Route>
 				<Route path='/'>
-					<Home />
+					<div>Home Page</div>
 				</Route>
 			</Switch>
 		</Router>
 	)
 }
-
-export default App
