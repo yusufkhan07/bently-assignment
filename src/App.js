@@ -1,10 +1,17 @@
 import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { useState } from 'react'
 
-import { Home } from './components/home'
 import { Task2 } from './components/task2'
+import { Task1 } from './components/task1'
 
 function App() {
+	const [bgColor, setBgColor] = useState('#7ECBA2')
+
+	const bgColorChanged = color => {
+		setBgColor(color.hex)
+	}
+
 	return (
 		<Router>
 			<nav
@@ -25,14 +32,28 @@ function App() {
 				</div>
 			</nav>
 
-			<Switch>
-				<Route path='/task2'>
-					<Task2 />
-				</Route>
-				<Route path='/'>
-					<Home />
-				</Route>
-			</Switch>
+			<div className='App'>
+				<section
+					className='hero'
+					style={{
+						backgroundColor: bgColor,
+					}}
+				>
+					<div className='hero-body'>
+						<Switch>
+							<Route path='/task2'>
+								<Task2 />
+							</Route>
+							<Route path='/'>
+								<Task1
+									bgColor={bgColor}
+									bgColorChanged={bgColorChanged}
+								/>
+							</Route>
+						</Switch>
+					</div>
+				</section>
+			</div>
 		</Router>
 	)
 }
