@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 import { Home } from './components/home'
+import { Task2 } from './components/task2'
 
 function App() {
 	return (
@@ -26,7 +27,7 @@ function App() {
 
 			<Switch>
 				<Route path='/task2'>
-					<div>Max 2 Elements from Array</div>
+					<Task2 />
 				</Route>
 				<Route path='/'>
 					<Home />
