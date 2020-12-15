@@ -15,7 +15,7 @@ function App() {
 	return (
 		<Router>
 			<nav
-				className='navbar'
+				className='navbar is-dark'
 				role='navigation'
 				aria-label='main navigation'
 			>
