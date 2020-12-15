@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/bently-assignment/static/css/main.3f9f89c2.chunk.css",
+    "main.js": "/bently-assignment/static/js/main.6e2f37c4.chunk.js",
+    "main.js.map": "/bently-assignment/static/js/main.6e2f37c4.chunk.js.map",
+    "runtime-main.js": "/bently-assignment/static/js/runtime-main.d1a40ef9.js",
+    "runtime-main.js.map": "/bently-assignment/static/js/runtime-main.d1a40ef9.js.map",
+    "static/js/2.6b45eec4.chunk.js": "/bently-assignment/static/js/2.6b45eec4.chunk.js",
+    "static/js/2.6b45eec4.chunk.js.map": "/bently-assignment/static/js/2.6b45eec4.chunk.js.map",
+    "static/js/3.7e209e06.chunk.js": "/bently-assignment/static/js/3.7e209e06.chunk.js",
+    "static/js/3.7e209e06.chunk.js.map": "/bently-assignment/static/js/3.7e209e06.chunk.js.map",
+    "index.html": "/bently-assignment/index.html",
+    "static/css/main.3f9f89c2.chunk.css.map": "/bently-assignment/static/css/main.3f9f89c2.chunk.css.map",
+    "static/js/2.6b45eec4.chunk.js.LICENSE.txt": "/bently-assignment/static/js/2.6b45eec4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d1a40ef9.js",
+    "static/js/2.6b45eec4.chunk.js",
+    "static/css/main.3f9f89c2.chunk.css",
+    "static/js/main.6e2f37c4.chunk.js"
+  ]
+}
