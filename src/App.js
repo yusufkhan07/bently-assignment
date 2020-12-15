@@ -20,7 +20,7 @@ function App() {
 				role='navigation'
 				aria-label='main navigation'
 			>
-				<div className='navbar-menu is-active'>
+				<div className='navbar-menu is-active is-dark'>
 					<div className='navbar-start'>
 						<Link to='/' className='navbar-item'>
 							Task 1
@@ -61,6 +61,17 @@ function App() {
 						</Switch>
 					</div>
 				</section>
+
+				<p>
+					Note: I have deployed the UI on
+					<a href='https://yusufkhan07.github.io/bently-assignment/'>
+						https://yusufkhan07.github.io/bently-assignment/
+					</a>
+					. I was planning to deploy backend on an AWS instance and
+					connect it with the UI but due to time constraints I am
+					unable to deploy the backend code on server; due to which
+					API calls will fail on the github-pages hosted UI
+				</p>
 			</div>
 		</Router>
 	)
