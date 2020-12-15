@@ -1,9 +1,34 @@
 import React, { useState, useRef, useCallback } from 'react'
 
+function IsJsonString(str) {
+	try {
+		JSON.parse(str)
+	} catch (e) {
+		return false
+	}
+	return true
+}
+
 export const Task2 = props => {
 	const isMounted = useRef(true)
 	const [apiIsLoading, setApiIsLoading] = useState()
 	const [text, setText] = useState('')
+	const [max, setMax] = useState(null)
+	const [secondmax, setSecondMax] = useState(null)
+
+	const handleErrorMessage = msg => {
+		// we can display a popup or toast here
+		alert(msg)
+	}
+
+	// returns true if valid, error-msg string if invalid
+	const validateInputText = text => {
+		if (!IsJsonString(text)) {
+			return 'Pass comma seperated numbers'
+		}
+
+		return true
+	}
 
 	const getMaxAndSecondMax = async () => {
 		// don't send again while we are sending
@@ -12,6 +37,11 @@ export const Task2 = props => {
 		}
 
 		// check if text is valid.
+		const valid = validateInputText(text)
+
+		if (valid !== true) {
+			return handleErrorMessage(valid)
+		}
 
 		// update state
 		setApiIsLoading(true)
@@ -27,12 +57,13 @@ export const Task2 = props => {
 			const body = await result.json()
 
 			if (result.status >= 200 && result.status < 300) {
-				console.log('fetchRequest -> result', body.message)
+				setMax(body.message.max)
+				setSecondMax(body.message.secondMax)
 			} else {
-				alert(body.message)
+				handleErrorMessage(body.message)
 			}
 		} catch (err) {
-			alert(err.body)
+			handleErrorMessage(err.body)
 		} finally {
 			// once the request is sent, update state again
 			if (isMounted.current) setApiIsLoading(false)
@@ -47,9 +78,9 @@ export const Task2 = props => {
 					<input
 						className='input'
 						type='text'
-						placeholder='Text input'
+						placeholder='11, 53, 613, 90, 25'
 						onChange={e => {
-							setText(e.target.value)
+							setText('[' + e.target.value + ']')
 						}}
 					/>
 				</div>
@@ -64,6 +95,13 @@ export const Task2 = props => {
 				>
 					Submit
 				</button>
+			</div>
+
+			<div className='field'>
+				{max && <p className='title'>Max: {max}</p>}
+			</div>
+			<div className='field'>
+				{secondmax && <p className='title'>SecondMax: {secondmax}</p>}
 			</div>
 		</>
 	)
