@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { useState } from 'react'
 
+import { Task3 } from './components/task3'
 import { Task2 } from './components/task2'
 import { Task1 } from './components/task1'
 
@@ -28,6 +29,10 @@ function App() {
 						<Link to='/task2' className='navbar-item'>
 							Task 2
 						</Link>
+
+						<Link to='/task3' className='navbar-item'>
+							Task 3
+						</Link>
 					</div>
 				</div>
 			</nav>
@@ -41,6 +46,9 @@ function App() {
 				>
 					<div className='hero-body'>
 						<Switch>
+							<Route path='/task3'>
+								<Task3 />
+							</Route>
 							<Route path='/task2'>
 								<Task2 />
 							</Route>
